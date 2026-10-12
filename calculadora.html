@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tim Tim calculadora</title>
+    
+    <style>
+        body {
+            color: rgb(13, 36, 207);
+            background-color: black;
+        }
+        .botoes{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+        }
+
+        button{
+            height: 55px;
+            font-size: 22px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+  </head>
+  
+  <body>
+    <h1>timtim calculadora</h1>
+    <input type="text" id="visor" value="0" readonly> 
+
+    <div class="botoes">
+        <button onclick="document.getElementById('visor').value +='1'">1</button>
+        <button onclick="document.getElementById('visor').value +='2'">2</button>
+        <button onclick="document.getElementById('visor').value +='3'">3</button>
+        <button onclick="document.getElementById('visor').value +='4'">4</button>
+        <button onclick="document.getElementById('visor').value +='5'">5</button>
+        <button onclick="document.getElementById('visor').value +='6'">6</button>
+        <button onclick="document.getElementById('visor').value +='7'">7</button>
+        <button onclick="document.getElementById('visor').value +='8'">8</button>
+        <button onclick="document.getElementById('visor').value +='9'">9</button>
+        <button onclick="document.getElementById('visor').value +='0'">0</button>
+        <button onclick="escolherSoma()">+</button>
+
+        
+<button onclick="calcular()">=</button>
+
+    </div>
+    <script>
+
+        let primeiroNumero = 0;
+        let operacao = "";
+
+          function escolherSoma() {
+    primeiroNumero = Number(document.getElementById('visor').value);
+    operacao = "+";
+    document.getElementById('visor').value = "";
+}
+function calcular() {
+    let segundoNumero = Number(document.getElementById('visor').value);
+    let resultado = primeiroNumero + segundoNumero;
+    document.getElementById('visor').value = resultado;
+}
+
+
+
+    </script>
+  </body>
+</html>
